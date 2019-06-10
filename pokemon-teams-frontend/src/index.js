@@ -6,6 +6,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const POKEMONS_URL = `${BASE_URL}/pokemons`
 
 const main = document.querySelector('main')
+const
+
+function getPokemons() {
+  fetch(POKEMONS_URL)
+  .then(response => response.json())
+  .then(pokemons => {
+
+    console.log(pokemons);
+
+pokemons.forEach(pokemon => {
+  if pokemon.trainer_id === trainer.id
+
+  `<li>
+      ${pokemon.nickname} (${pokemon.species}) <button class="release" data-pokemon-id="${pokemon.id}">Release</button>
+    </li>
+
+  `})
+})
+
+
+
+document.querySelector('ul')
 
 fetch(TRAINERS_URL)
 .then(response => response.json())
@@ -15,8 +37,8 @@ fetch(TRAINERS_URL)
     trainers.forEach(trainer => {
       main.innerHTML += `
         <div class="card" data-id="${trainer.id}"><p>${trainer.name}</p>
-          <button data-trainer-id="${trainer.id}">Add Pokemon</button>
-          <ul></ul>
+          <button data-trainer-id="${trainer.id}">Add Pokemon</button>``
+          <ul>POKELIST</ul>
         </div>
       `
     })
@@ -24,19 +46,6 @@ fetch(TRAINERS_URL)
 })
 
 
-
-
-
-//
-// function getPokemons {  fetch(POKEMONS_URL)
-//   .then(response => response.json())
-//   .then(data => console.log(data))
-//
-//   const pokemonLi = `
-//     <li>
-//       ${pokemon.nickname} (${pokemon.species}) <button class="release" data-pokemon-id="${pokemon.id}">Release</button>
-//     </li>
-//   `}
 
 
 
